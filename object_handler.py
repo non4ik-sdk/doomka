@@ -2,7 +2,6 @@ from sprite_object import *
 from npc import *
 from random import choices, randrange
 
-
 class ObjectHandler:
     def __init__(self, game):
         self.game = game
@@ -16,7 +15,7 @@ class ObjectHandler:
         self.npc_positions = {}
 
         # spawn npc
-        self.enemies = 20  # npc count
+        self.enemies = 20 
         self.npc_types = [SoldierNPC, CacoDemonNPC, CyberDemonNPC]
         self.weights = [70, 20, 10]
         self.restricted_area = {(i, j) for i in range(10) for j in range(10)}

@@ -36,7 +36,6 @@ mini_map = [
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
 ]
 
-
 class Map:
     def __init__(self, game):
         self.game = game

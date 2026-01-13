@@ -40,7 +40,6 @@ class Sound:
             for key, sound in executor.map(load_sound, sound_files.items()):
                 setattr(self, key, sound)
 
-        # музыка загружается отдельно
         pg.mixer.music.load(resource_path(self.path + 'theme.mp3'))
         pg.mixer.music.set_volume(0.05)
         self.music_loaded = True

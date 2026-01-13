@@ -24,7 +24,6 @@ class Game:
         self.global_event = pg.USEREVENT + 0
         pg.time.set_timer(self.global_event, 40)
 
-        # --- FPS font
         self.fps_font = pg.font.SysFont('consolas', 26, bold=True)
         self.fps_color = pg.Color('white')
         self.fps_offset = 20  

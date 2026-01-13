@@ -106,4 +106,3 @@ class ObjectRenderer:
                 textures[key] = texture
 
         return textures
-
