@@ -40,11 +40,17 @@ jobs:
           for /f "delims=" %%a in ('powershell -NoProfile -Command "Get-Date -Format yyyy.MM.dd"') do set VER=%%a
           echo ::set-output name=VERSION::%VER%
 
+      - name: Get short commit sha
+        id: sha
+        run: |
+          set SHORT_SHA=%GITHUB_SHA:~0,7%
+          echo ::set-output name=SHORT_SHA::%SHORT_SHA%
+
       - name: Create Release and Upload EXE
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ steps.version.outputs.VERSION }} - ${{ github.sha[0:7] }}
-          name: Release v${{ steps.version.outputs.VERSION }} - ${{ github.sha[0:7] }}
+          tag_name: v${{ steps.version.outputs.VERSION }}-${{ steps.sha.outputs.SHORT_SHA }}
+          name: Release v${{ steps.version.outputs.VERSION }} win 10/11 - ${{ steps.sha.outputs.SHORT_SHA }}
           files: Doomka.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
