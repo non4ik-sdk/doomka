@@ -44,7 +44,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.version.outputs.VERSION }}
-          name: Release v${{ steps.version.outputs.VERSION }}
-          files: Close.exe
+          name: Release v${{ steps.version.outputs.VERSION }} win 10/11
+          files: Doomka.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
