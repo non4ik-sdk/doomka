@@ -1,4 +1,4 @@
-name: Build CloseAll
+name: Build Doomka
 
 on:
   push:
