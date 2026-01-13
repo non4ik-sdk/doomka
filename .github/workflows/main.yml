@@ -50,7 +50,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.version.outputs.VERSION }}-${{ steps.sha.outputs.SHORT_SHA }}
-          name: Release v${{ steps.version.outputs.VERSION }} win 10/11 - ${{ steps.sha.outputs.SHORT_SHA }}
+          name: Release v${{ steps.version.outputs.VERSION }} - ${{ steps.sha.outputs.SHORT_SHA }}
           files: Doomka.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
