@@ -32,7 +32,8 @@ jobs:
 
       - name: Build EXE
         run: |
-          python -m nuitka main.py --onefile --assume-yes-for-downloads --include-data-dir=resources=resources --output-filename=Doomka.exe
+          python -m nuitka main.py --standalone --assume-yes-for-downloads --include-data-dir=resources=resources --windows-disable-console --windows-company-name="non4ik-sdk" --product-name="Doomka-${GITHUB_SHA:0,7}" --output-filename=Doomka.exe
+
 
       - name: Set version from date
         id: version
