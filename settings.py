@@ -1,13 +1,18 @@
 import math
+import pygame as pg
 
-# game settings
-RES = WIDTH, HEIGHT = 1600, 900
-# RES = WIDTH, HEIGHT = 1920, 1080
+pg.init()
+info = pg.display.Info()
+
+WIDTH = info.current_w
+HEIGHT = info.current_h
+RES = WIDTH, HEIGHT
+
 HALF_WIDTH = WIDTH // 2
 HALF_HEIGHT = HEIGHT // 2
 FPS = 0
 
-PLAYER_POS = 1.5, 5 
+PLAYER_POS = 1.5, 5
 PLAYER_ANGLE = 0
 PLAYER_SPEED = 0.004
 PLAYER_ROT_SPEED = 0.002
@@ -19,7 +24,7 @@ MOUSE_MAX_REL = 40
 MOUSE_BORDER_LEFT = 100
 MOUSE_BORDER_RIGHT = WIDTH - MOUSE_BORDER_LEFT
 
-FLOOR_COLOR = (40, 40, 40)
+FLOOR_COLOR = (30, 30, 30)
 
 FOV = math.pi / 3
 HALF_FOV = FOV / 2

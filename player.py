@@ -35,7 +35,6 @@ class Player:
         self.health -= damage
         self.game.object_renderer.player_damage()
         
-        # безопасное воспроизведение
         if hasattr(self.game, 'sound') and self.game.sound.loaded and self.game.sound.player_pain:
             try:
                 self.game.sound.player_pain.play()
@@ -84,17 +83,12 @@ class Player:
             dx += -speed_sin
             dy += speed_cos
 
-        # diag move correction
         if num_key_pressed:
             dx *= self.diag_move_corr
             dy *= self.diag_move_corr
 
         self.check_wall_collision(dx, dy)
 
-        # if keys[pg.K_LEFT]:
-        #     self.angle -= PLAYER_ROT_SPEED * self.game.delta_time
-        # if keys[pg.K_RIGHT]:
-        #     self.angle += PLAYER_ROT_SPEED * self.game.delta_time
         self.angle %= math.tau
 
     def check_wall(self, x, y):
